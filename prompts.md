@@ -79,6 +79,33 @@ Crie um resumo sobre o processo de Incident Management no ServiceNow, incluindo 
 
 ## Retorno Prompt 3:
 
+O gerenciamento de incidentes no ServiceNow visa restaurar a operação normal do serviço o mais rápido possível, minimizando impactos negativos nos negócios e garantindo níveis acordados de qualidade e disponibilidade. O processo segue um ciclo de vida estruturado, integrando-se nativamente com o CMDB e as melhores práticas da ITIL 4.
+
+Abaixo está o resumo das etapas principais:
+
+1. Registro (Logging)
+Um incidente é identificado quando ocorre uma interrupção não planejada ou redução na qualidade de um serviço de TI. O registro pode ser realizado de forma omnichannel:
+- Autoatendimento: Usuários finais podem submeter incidentes através do Service Portal.
+- Manual: Técnicos podem criar registros diretamente na aplicação de Incidentes.
+- Automático: Ferramentas de monitoramento e AIOps podem gerar alertas que criam incidentes automaticamente quando falhas são detectadas.
+
+2. Categorização (Categorization)
+Os incidentes são classificados com base na área de TI ou do negócio afetada. Uma boa prática fundamental é associar o incidente a um Serviço ou Item de Configuração (CI) específico no CMDB, em vez de usar apenas categorias genéricas. Isso permite que a plataforma identifique automaticamente o dono do serviço e as regras de atribuição, facilitando a análise de impacto.
+
+3. Priorização (Prioritization)
+A prioridade define a ordem de atendimento e os prazos dos Acordos de Nível de Serviço (SLAs). No ServiceNow, ela é calculada automaticamente por uma matriz baseada em dois fatores:
+- Impacto: Mede a extensão do dano ou o potencial de prejuízo ao negócio (ex: número de usuários afetados).
+- Urgência: Reflete quão rápido o negócio precisa da restauração antes que o impacto seja sentido. A combinação desses fatores resulta em níveis de prioridade (ex: P1 - Crítica a P5 - Planejamento).
+  
+4. Atribuição (Assignment)
+Após a triagem, o incidente é encaminhado para um Grupo de Atribuição (Assignment Group) técnico responsável. Com o uso do modelo de dados CSDM, a atribuição pode ser herdada automaticamente do CI ou serviço afetado. Uma vez no grupo, um técnico específico é designado como o dono do chamado (Assigned to). O uso de Predictive Intelligence também pode automatizar esse roteamento com base em padrões históricos.
+
+5. Resolução (Resolution)
+Ocorre quando o técnico aplica uma solução definitiva ou um contorno (workaround) para restaurar o serviço. Ao mover o incidente para o estado "Resolvido", o ServiceNow geralmente exige o preenchimento de códigos de resolução e notas técnicas, fundamentais para alimentar a base de conhecimento e evitar recorrências. Nesta fase, o cronômetro do SLA de resolução é interrompido.
+
+6. Encerramento (Closure)
+O estado final é o encerramento, que acontece após o usuário confirmar que o serviço foi restaurado e está satisfeito. Muitas organizações configuram o encerramento automático (ex: após 7 dias) se o usuário não reabrir o chamado. Após fechado, o registro torna-se um histórico imutável para auditoria e análise de melhoria contínua.
+
 --------------------------------------------------------------------------------
 
 ## Prompt 4
