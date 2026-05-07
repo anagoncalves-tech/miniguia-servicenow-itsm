@@ -114,6 +114,43 @@ Crie um resumo sobre o processo de Incident Management no ServiceNow, incluindo 
 
 ### Retorno Prompt 4:
 
+O gerenciamento de incidentes no ServiceNow tem como objetivo principal restaurar a operação normal do serviço o mais rápido possível, minimizando impactos negativos nos negócios e garantindo os níveis de qualidade e disponibilidade acordados.
+
+Abaixo está o resumo das etapas do processo:
+
+1. Registro (Logging)
+Um incidente é identificado quando ocorre uma interrupção não planejada ou redução na qualidade de um serviço. O registro pode ser feito de forma omnichannel:
+- Manual: Através da aplicação de Incidentes por técnicos ou pelo Service Desk.
+- Autoatendimento: Usuários finais podem submeter chamados pelo Service Portal (Get Help > Create Incident).
+- Automático: Ferramentas de monitoramento ou AIOps podem gerar alertas que criam incidentes automaticamente ao detectar falhas.
+
+3. Categorização (Categorization)
+Os incidentes são classificados para facilitar o roteamento e análises futuras.
+- Serviços e CIs: A melhor prática é associar o incidente a um Serviço ou Item de Configuração (CI) no CMDB, permitindo que o sistema herde regras de atribuição e escalonamento automaticamente.
+- Subcategorias: O valor selecionado na categoria principal (ex: Software) geralmente filtra as subcategorias disponíveis (ex: E-mail).
+
+4. Priorização (Prioritization)
+A prioridade define a ordem de atendimento e os prazos dos SLAs (Service Level Agreements). No ServiceNow, ela é calculada automaticamente por uma matriz baseada em:
+- Impacto: Mede a extensão do dano (ex: todo o campus, um departamento ou apenas um usuário).
+- Urgência: Reflete quão rápido o negócio precisa da restauração (ex: se impede funções críticas do cargo).
+- Matriz OOB: Por exemplo, um Impacto "Alto" com Urgência "Alta" resulta em uma Prioridade 1 (Crítica).
+
+4. Atribuição (Assignment)
+O incidente é encaminhado para um Grupo de Atribuição técnico responsável pela resolução.
+- Técnico Responsável: Uma vez no grupo, um analista específico é designado no campo Assigned to.
+- Automação: O uso de Predictive Intelligence pode automatizar essa triagem, prevendo o grupo correto com base em padrões históricos de dados.
+  
+5. Resolução (Resolution)
+Ocorre quando o técnico aplica uma solução definitiva ou um contorno (workaround) para restaurar o serviço.
+- Campos Obrigatórios: Ao mover para o estado "Resolvido", o sistema exige obrigatoriamente o preenchimento de códigos de resolução e notas técnicas para fins de auditoria e melhoria da base de conhecimento.
+- SLA: O cronômetro do SLA de resolução é interrompido nesta fase.
+
+7. Encerramento (Closure)
+É o estado final onde o serviço é confirmado como restaurado e o registro torna-se um histórico imutável.
+- Confirmação do Usuário: O encerramento geralmente ocorre após o usuário confirmar satisfação ou automaticamente após um período de inatividade no estado resolvido (frequentemente 7 dias).
+- Ciclo de Melhoria: Dados de incidentes encerrados alimentam a Gestão de Problemas para identificar causas raiz e evitar recorrências
+
+
 --------------------------------------------------------------------------------
 
 ## Prompt Reutilizáveis
